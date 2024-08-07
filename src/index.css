@@ -2,8 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --main-color: #1967d2;
+}
+
 * {
     font-family: "roboto";
     margin: 0;
     padding: 0;
+}
+
+.font-color-main {
+    color: var(--main-color);
+}
+
+.section-title {
+    position: relative;
+}
+
+.section-title::before,
+.section-title::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 4px;
+    background: var(--main-color);
+    transition: transform 0.3s ease-in-out;
+}
+
+.section-title::before {
+    top: -10px;
+    left: 50%;
+    translate: -50%;
+    transform: translate(50%) scaleX(0);
+}
+
+.section-title::after {
+    bottom: -10px;
+    right: 50%;
+    translate: 50%;
+    transform: translate(-50%) scaleX(0);
+}
+
+.section-title:hover::before,
+.section-title:hover::after {
+    transform: translateX(0) scaleX(1);
 }

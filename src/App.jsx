@@ -1,28 +1,43 @@
-import { Avatar, Box, Typography } from "@mui/material";
 import "./App.css";
+import ContactMe from "./components/ContactMe";
+import Footer from "./components/Footer";
+import Landing from "./components/Landing";
+import Projects from "./components/Projects";
 
 function App() {
+    const projects = [
+        {
+            title: "Project One",
+            description: "This is a description of project one.",
+            image: "https://via.placeholder.com/400",
+            date: "2023-01-01",
+        },
+        {
+            title: "Project Two",
+            description: "This is a description of project two.",
+            image: "https://via.placeholder.com/400",
+            date: "2023-02-01",
+        },
+
+        {
+            title: "Project Three",
+            description: "This is a description of project three.",
+            image: "https://via.placeholder.com/400",
+            date: "2023-03-01",
+        },
+        {
+            title: "Project Four",
+            description: "This is a description of project four.",
+            image: "https://via.placeholder.com/400",
+            date: "2023-04-01",
+        },
+    ];
     return (
         <>
-            <Box className="container flex justify-center items-center h-lvh gap-16 mx-auto ">
-                <Avatar
-                    alt="Travis Howard"
-                    src="/images/2.jpg"
-                    sx={{ width: 300, height: 300 }}
-                />
-                <Box sx={{ width: "100%", maxWidth: 600 }}>
-                    <Typography variant="h2" gutterBottom>
-                        Hi, It`s{" "}
-                        <Typography variant="span">Mohamed 👋</Typography>
-                    </Typography>
-                    <Typography variant="h3" gutterBottom>
-                        Software Developer
-                    </Typography>
-                    <Typography variant="h3" color={"Highlight"}>
-                        Frontend and cross platform.
-                    </Typography>
-                </Box>
-            </Box>
+            <Landing />
+            <Projects projects={projects} />
+            <ContactMe />
+            <Footer />
         </>
     );
 }
